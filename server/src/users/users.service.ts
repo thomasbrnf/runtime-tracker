@@ -13,7 +13,7 @@ export class UsersService {
 
   async createUser(userData: CreateUserDto) {
     const user = this.userRepository.create(userData);
-    return this.userRepository.save(user);
+    return await this.userRepository.save(user);
   }
 
   async findOne(id: number) {
@@ -23,17 +23,17 @@ export class UsersService {
   }
 
   async findByEmail(email: string) {
-    return this.userRepository.findOneBy({
+    return await this.userRepository.findOneBy({
       email: email,
     });
   }
 
   async getUsers() {
-    return this.userRepository.find();
+    return await this.userRepository.find();
   }
 
   async updateUser(id: number, userData: CreateUserDto) {
-    return this.userRepository.update(id, {
+    return await this.userRepository.update(id, {
       email: userData.email,
       username: userData.username,
       accessToken: userData.accessToken,

@@ -16,9 +16,12 @@ export class Session {
 
   @Column()
   startTime: string;
-  
+
   @Column()
   endTime: string;
+
+  @Column()
+  timeZone: string;
 
   @ManyToOne(() => User, (user) => user.sessions)
   @JoinColumn({ name: 'user_id' })

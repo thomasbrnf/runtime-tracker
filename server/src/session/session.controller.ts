@@ -1,26 +1,19 @@
-import { Controller, Post, Body, Param } from '@nestjs/common';
+import { Controller, Param, Get, Res } from '@nestjs/common';
 import { SessionService } from './session.service';
-import { SessionDto } from './dto/session.dto';
+import { IdsDto } from './dto/ids.dto';
+import { SessionInitDto } from './dto/session-init.dto';
 
 @Controller('users/:userId/:deviceId/session')
 export class SessionController {
   constructor(private sessionService: SessionService) {}
 
-  // @Post('initialise')
-  // async initialise(   @Param() userId,
-  //                     @Param() deviceId,
-  //                     @Body() sessionDto: SessionDto ) {
+  @Get('initialise')
+  async initialise(@Param() sessionInitDto: SessionInitDto) {
+    return await this.sessionService.handleInitialisation(sessionInitDto);
+  }
 
-  //     this.sessionService.initialise(userId, deviceId, sessionDto);
-
-  // }
-
-  // @Post('ping')
-  // async ping( @Param() userId,
-  //             @Param() deviceId,
-  //             @Body() sessionDto: SessionDto ) {
-
-  //     this.sessionService.ping(userId, deviceId, sessionDto);
-
-  // }
+  @Get(':sessionId/ping')
+  async ping(@Param() ids: IdsDto) {
+   return this.sessionService.handlePing(ids);
+  }
 }

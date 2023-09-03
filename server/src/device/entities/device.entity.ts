@@ -18,7 +18,7 @@ export class Device {
   name: string;
 
   @Column()
-  status: string;
+  online: boolean;
 
   @ManyToOne(() => User, (user) => user.devices)
   @JoinColumn({ name: 'user_id' })
