@@ -18,6 +18,9 @@ export class Device {
   name: string;
 
   @Column()
+  os: string;
+
+  @Column()
   online: boolean;
 
   @ManyToOne(() => User, (user) => user.devices)

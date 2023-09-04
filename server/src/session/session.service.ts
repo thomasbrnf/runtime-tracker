@@ -65,8 +65,9 @@ export class SessionService {
     session = await this.setEndTime(ids.sessionId, endTime);
 
     const deviceName = await this.deviceService.deviceName(ids.deviceId);
+    await this.deviceService.updateStatus(ids.deviceId, false);
     this.sendDataToCalendar(ids.userId, session, deviceName);
-
+    
     return await this.sessionRepository.remove(session);
   }
 

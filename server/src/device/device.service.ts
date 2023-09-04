@@ -18,6 +18,7 @@ export class DeviceService {
     if (!user) throw new NotFoundException('user not found');
     const device = this.deviceRepository.create({
       name: deviceData.name,
+      os: deviceData.os,
       online: deviceData.online,
       user: user,
     });

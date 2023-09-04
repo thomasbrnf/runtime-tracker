@@ -8,6 +8,7 @@ import { AuthController } from './auth/auth.controller';
 import { AuthService } from './auth/auth.service';
 import { AuthModule } from './auth/auth.module';
 import { CalendarModule } from './calendar/calendar.module';
+import { ScriptModule } from './script/script.module';
 
 @Module({
   imports: [
@@ -31,6 +32,7 @@ import { CalendarModule } from './calendar/calendar.module';
       inject: [ConfigService],
     }),
     CalendarModule,
+    ScriptModule,
   ],
   controllers: [AuthController],
   providers: [AuthService],
