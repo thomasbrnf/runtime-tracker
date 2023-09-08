@@ -14,6 +14,6 @@ export class SessionController {
 
   @Get(':sessionId/ping')
   async ping(@Param() ids: IdsDto) {
-   return this.sessionService.handlePing(ids);
+    return this.sessionService.handlePing(ids);
   }
 }

@@ -6,7 +6,7 @@ export class CreateDeviceDto {
   name: string;
 
   @IsEnum(OS)
-  os: OS
+  os: OS;
 
   @IsBoolean()
   online: boolean;

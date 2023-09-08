@@ -51,7 +51,7 @@ export class SessionService {
 
     clearTimeout(this.timeout);
     this.setCloseTimeout(ids);
-    return "Ping succeed";
+    return 'Ping succeed';
   }
 
   private async close(ids: IdsDto) {
@@ -67,7 +67,7 @@ export class SessionService {
     const deviceName = await this.deviceService.deviceName(ids.deviceId);
     await this.deviceService.updateStatus(ids.deviceId, false);
     this.sendDataToCalendar(ids.userId, session, deviceName);
-    
+
     return await this.sessionRepository.remove(session);
   }
 

@@ -1,12 +1,15 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Post, Param, StreamableFile, UseGuards } from '@nestjs/common';
+import { GoogleAuthGuard } from 'src/auth/guards/google-auth.guard';
 import { ScriptService } from './script.service';
+import { DataDto } from './dto/data.dto';
 
-@Controller('script')
+@Controller('/users/:userId/devices/:deviceId/script')
 export class ScriptController {
-    constructor(private scriptService: ScriptService) {}
+  constructor(private scriptService: ScriptService) {}
 
-    @Get() 
-    async fetchFile(){
-        return this.scriptService.retriveFile();
-    }
+  @Post('download')
+  @UseGuards(GoogleAuthGuard)
+  async fetchFile(@Param() data: DataDto) {
+    return new StreamableFile(await this.scriptService.fetchExecutable(data));
+  }
 }
