@@ -1,0 +1,27 @@
+.input-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.select-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.select-div {
+    padding-top: 1rem;
+}
+
+.buttons-div {
+    padding-top: 0.8rem;
+}
+
+.action-button {
+    color: #111111;
+    background: #FFF;   
+}
+

@@ -19,7 +19,7 @@ export class DeviceService {
     const device = this.deviceRepository.create({
       name: deviceData.name,
       os: deviceData.os,
-      online: deviceData.online,
+      online: false,
       user: user,
     });
     return this.deviceRepository.save(device);

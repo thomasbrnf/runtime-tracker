@@ -12,7 +12,6 @@ export class AuthService {
       await this.userService.updateUser(user.id, userData);
       return await this.userService.findByEmail(userData.email);
     }
-
     return await this.userService.createUser(userData);
   }
 }
