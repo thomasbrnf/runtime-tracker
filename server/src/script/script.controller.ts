@@ -1,4 +1,10 @@
-import { Controller, Post, Param, StreamableFile, UseGuards } from '@nestjs/common';
+import {
+  Controller,
+  Post,
+  Param,
+  StreamableFile,
+  UseGuards,
+} from '@nestjs/common';
 import { GoogleAuthGuard } from 'src/auth/guards/google-auth.guard';
 import { ScriptService } from './script.service';
 import { DataDto } from './dto/data.dto';

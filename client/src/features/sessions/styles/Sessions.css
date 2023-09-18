@@ -1,0 +1,8 @@
+.sessions-grid {
+  display: grid;
+  justify-content: center;
+  gap: 2rem;
+  padding-bottom: 5rem;
+
+  grid-template-columns: repeat(auto-fill, minmax(85vw, 85vw));
+}

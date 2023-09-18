@@ -5,7 +5,7 @@
   will-change: filter;
   transition: filter 300ms;
 
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -30,7 +30,7 @@
   width: 210px;
   height: 38px;
 
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 14px;
   font-weight: 600;
 
@@ -40,9 +40,9 @@
 
   border: none;
   border-radius: 7px;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   color: rgba(0, 0, 0, 0.54);
-  box-shadow: 0px 10px 20px rgba(0,0,0,0.2); 
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
 
   cursor: pointer;
 
@@ -60,4 +60,12 @@
 .googleLogo {
   padding-left: 5px;
   padding-right: 5px;
+}
+
+
+@media screen and (max-width: 768px) {
+  .mainLogo {
+    max-width: 100%;
+  }
+
 }

@@ -1,0 +1,22 @@
+.devices-grid {
+  display: grid;
+  gap: 2rem;
+  padding-bottom: 2rem;
+
+  grid-template-columns: repeat(auto-fill, minmax(164px, 164px));
+}
+
+@media screen and (max-width: 768px) {
+  .devices-grid {
+    display: grid;
+    justify-content: center;
+    gap: 2rem;
+    padding-bottom: 5rem;
+
+    grid-template-columns: repeat(auto-fill, minmax(85vw, 85vw));
+  }
+
+  h1 {
+    padding-left: 2rem;
+  }
+}

@@ -4,7 +4,7 @@ import { AuthService } from './auth.service';
 
 @Controller('auth')
 export class AuthController {
-  constructor(private readonly authService: AuthService,) {}
+  constructor(private readonly authService: AuthService) {}
 
   @Get()
   @UseGuards(GoogleOAuthGuard)
@@ -13,8 +13,9 @@ export class AuthController {
   @Get('google-redirect')
   @UseGuards(GoogleOAuthGuard)
   async googleAuthRedirect(@Req() req, @Res() res) {
-   const user = await this.authService.googleLogin(req.user);
-   return res.redirect(`http://localhost:5173/callback?access_token=${user.accessToken}&user_id=${user.id}`);
+    const user = await this.authService.googleLogin(req.user);
+    return res.redirect(
+      `http://localhost:5173/callback?access_token=${user.accessToken}&user_id=${user.id}`,
+    );
   }
-
 }

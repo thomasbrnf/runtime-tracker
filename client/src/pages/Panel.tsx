@@ -1,27 +1,24 @@
-import { Devices } from "../components/Devices";
-import { Sessions } from "../components/Sessions";
+import { Devices } from "../features/devices/Devices";
+import { Sessions } from "../features/sessions/Sessions";
 import { getToken } from "../services/auth.service";
-import { SideBar } from "../components/SideBar";
+import { SideBar } from "../features/side-bar";
 import { Navigate } from "react-router-dom";
-import '../styles/Panel.css'
-import { useState } from 'react';
+import { useState } from "react";
 
 export function Panel() {
-    const [content, setContnent] = useState('devices');
+  const [content, setContnent] = useState("devices");
 
-    const token = getToken();
-    if(!token) {
-        return <Navigate to="/" />
-    } 
-    return (
-        <>  
-            <SideBar setContent={setContnent}  />
-            <main>
-                {content === 'devices' && <Devices />}
-                {content === 'sessions' && <Sessions />} 
-
-
-            </main>
-        </>
-    )
+  const token = getToken();
+  if (!token) {
+    return <Navigate to="/" />;
+  }
+  return (
+    <>
+      <SideBar setContent={setContnent} />
+      <main>
+        {content === "devices" && <Devices />}
+        {content === "sessions" && <Sessions />}
+      </main>
+    </>
+  );
 }

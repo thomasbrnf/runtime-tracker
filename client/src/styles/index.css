@@ -1,9 +1,9 @@
 :root {
-  font-family: 'DM Sans', sans-serif;
+  font-family: "DM Sans", sans-serif;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #111111;
+  background-color: #111;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -13,13 +13,12 @@
 }
 
 body {
- margin: 0;
- padding: 0; 
+  margin: 0;
+  padding: 0;
 }
 
 main {
   margin-left: 8.5rem;
-  
 }
 
 h1 {
@@ -27,35 +26,33 @@ h1 {
   padding-top: 2.5rem;
   padding-bottom: 1.5rem;
   font-size: 34px;
-  
 }
 
-  button {
-    width: 90px;
-    height: 35px;
+button {
+  width: 90px;
+  height: 35px;
 
-    font-size: 15px;
-    font-weight: 400;
+  font-size: 15px;
+  font-weight: 400;
 
-    margin: 0.5rem;
-    margin-bottom: 0;
-    border: none;
-    border-radius: 11px;
-    background-color: #111111;
+  margin: 0.5rem;
+  margin-bottom: 0;
+  border: none;
+  border-radius: 11px;
+  background-color: #111111;
 
-    cursor: pointer;
+  cursor: pointer;
 
-    transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 button:active {
-    transform: translate(0px, 1px);
+  transform: translate(0px, 1px);
 }
 
 select {
   width: 250px;
   padding: 0.75rem;
-
 
   font-size: 14px;
   font-style: normal;
@@ -69,17 +66,16 @@ select {
   outline: none;
 
   cursor: pointer;
-  
 }
 
 select option {
-  line-height: 50px; 
+  line-height: 50px;
   padding: 40px;
   font-size: 14px;
   font-style: normal;
   font-weight: 600;
   padding-left: 1rem;
-  background-color: #111111;
+  background-color: #111;
   border-radius: 11px;
   outline: none;
 }
@@ -94,7 +90,7 @@ input {
   font-style: normal;
   font-weight: 600;
   padding-left: 1rem;
-  background-color: #111111;
+  background-color: #111;
   border-radius: 11px;
   outline: none;
 }
@@ -116,9 +112,13 @@ label {
 
   font-size: 16px;
 
-
-  color: #111111;
-  background-color: #FFF;
+  color: #111;
+  background-color: #fff;
   border-radius: 11px;
 }
 
+@media screen and (max-width: 768px) {
+  main {
+    margin: 0;
+  }
+}

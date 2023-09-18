@@ -1,41 +1,53 @@
 .overlay {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    
-    z-index: 3;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  z-index: 3;
 }
 
 .overlayContent {
-    max-width: 360px;  
-    max-height: 240px;  
+  max-width: 360px;
+  max-height: 240px;
 
-    padding: 1.5em;
-    padding-left: 2rem;
-    padding-right: 2rem;
+  padding: 1.5em;
+  padding-left: 2rem;
+  padding-right: 2rem;
 
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  border-radius: 11px;
+  background: #1e1e1e;
 
-    border-radius: 11px;
-    background: #1E1E1E;
-
-    z-index: 1;
+  z-index: 1;
 }
 
 .bgBlur {
-    height: 100vh;
-    width: 100vw;
-    backdrop-filter: blur(5px);
-    background: #1111118c;
+  height: 100vh;
+  width: 100vw;
+  backdrop-filter: blur(5px);
+  background: #1111118c;
 }
 
+.overlay-active {
+  overflow-y: hidden;
+}
+
+.desktop-only {
+  display: block;
+}
+
+@media screen and (max-width: 768px) {
+  .desktop-only {
+    display: none;
+  }
+}

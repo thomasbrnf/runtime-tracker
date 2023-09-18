@@ -7,5 +7,4 @@ export class CreateDeviceDto {
 
   @IsEnum(OS)
   os: OS;
-  
 }

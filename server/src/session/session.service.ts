@@ -14,7 +14,7 @@ import { DateTime } from 'luxon';
 
 @Injectable()
 export class SessionService {
-  private timeout: NodeJS.Timeout;
+  private timeouts = new Map<number, NodeJS.Timeout>();
 
   constructor(
     @InjectRepository(Session)
@@ -49,7 +49,7 @@ export class SessionService {
     //validating device and it`s status(if not exists or offline, return)
     if (!device || !device.online) return;
 
-    clearTimeout(this.timeout);
+    this.clearTimeout(ids.deviceId);
     this.setCloseTimeout(ids);
     return 'Ping succeed';
   }
@@ -71,10 +71,25 @@ export class SessionService {
     return await this.sessionRepository.remove(session);
   }
 
-  private async setCloseTimeout(ids: IdsDto) {
-    this.timeout = setTimeout(() => {
-      this.close(ids);
-    }, 15000);
+  private setCloseTimeout(ids: IdsDto) {
+    const key = ids.deviceId;
+
+    this.clearTimeout(key);
+
+    this.timeouts.set(
+      key,
+      setTimeout(() => {
+        this.close(ids);
+      }, 15000),
+    );
+  }
+
+  private clearTimeout(key: number) {
+    const timeout = this.timeouts.get(key);
+    if (timeout) {
+      clearTimeout(timeout);
+      this.timeouts.delete(key);
+    }
   }
 
   async sendDataToCalendar(
@@ -132,5 +147,13 @@ export class SessionService {
     return await this.sessionRepository.findOneBy({
       id: sessionId,
     });
+  }
+
+  async getUserSessions(userId: number) {
+    return await this.sessionRepository
+      .createQueryBuilder('session')
+      .leftJoinAndSelect('session.device', 'device')
+      .where('session.user_id = :userId', { userId })
+      .getMany();
   }
 }

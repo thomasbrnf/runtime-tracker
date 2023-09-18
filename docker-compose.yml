@@ -1,0 +1,40 @@
+version: '3.5'
+
+services:
+  postgresql:
+    image: postgres:15.4-alpine3.18
+    restart: always
+    container_name: postgresql
+    ports:
+      - '5432:5432'
+    volumes:
+      - ./server/pgdata:/var/lib/postgresql/data
+    env_file:
+      - ./server/.env
+    expose:
+      - 5432
+
+  app:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    container_name: nest-docker-postgres
+    environment:
+      - PORT=3000
+    ports:
+      - '3000:3000'
+    depends_on:
+      - postgresql
+    volumes:
+      - ./src:/server/src
+      
+  client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    container_name: client
+    ports:
+    - "5173:5173"
+
+volumes:
+  pgdata:

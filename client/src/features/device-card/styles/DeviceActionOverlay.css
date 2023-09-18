@@ -1,0 +1,42 @@
+.info-device {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.info-device h1 {
+  margin: 0;
+  padding: 1rem;
+  text-align: center;
+}
+.button-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-group button {
+  width: 200px;
+  height: 40px;
+
+  font-size: 15px;
+  font-weight: 400;
+
+  margin: 0.5rem;
+  margin-bottom: 0;
+  border: none;
+  border-radius: 11px;
+  background-color: #111111;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+  &.delete-button {
+    background-color: rgb(255, 255, 255);
+    color: #111111;
+  }
+}

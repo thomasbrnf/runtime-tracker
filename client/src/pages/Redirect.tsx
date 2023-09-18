@@ -1,23 +1,22 @@
-import { useLocation, useNavigate } from 'react-router-dom';
-import { useEffect } from 'react';  
+import { useLocation, useNavigate } from "react-router-dom";
+import { setCookies } from "../services/auth.service";
+import { useEffect } from "react";
 
 export function Redirect() {
-    const location = useLocation();
-    const navigate = useNavigate();
+  const location = useLocation();
+  const navigate = useNavigate();
 
-    useEffect(() => {
-        const queryParams = new URLSearchParams(location.search);
-        const token = queryParams.get('access_token'); 
-        const userId = queryParams.get('user_id');
+  useEffect(() => {
+    const queryParams = new URLSearchParams(location.search);
 
-        document.cookie = `accessToken=${token}; path=/`;
-        document.cookie = `userId=${userId}; path=/`;
+    setCookies(queryParams);
 
-        navigate("/personal-panel");
-       }, [location]);
-    return (
-      <div>
-        <span className="loader"></span>
-      </div>
-    );
-  }
+    navigate("/personal-panel");
+  }, [location]);
+
+  return (
+    <div>
+      <span className="loader"></span>
+    </div>
+  );
+}
