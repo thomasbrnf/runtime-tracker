@@ -16,7 +16,6 @@ export function Sessions() {
   async function setContent() {
     const sessions = await fetchSessions();
     if (!sessions) navigate("/");
-    console.log(sessions);
     setSessions(sessions);
   }
 

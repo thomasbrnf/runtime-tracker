@@ -4,7 +4,7 @@ export async function fetchSessions() {
   const token = getToken();
   const userId = getUserId();
 
-  const result = await fetch(`/users/${userId}/sessions`, {
+  const result = await fetch(`http://localhost:3000/users/${userId}/sessions`, {
     method: "GET",
     headers: {
       Authorization: `Bearer ${token}`,

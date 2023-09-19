@@ -4,7 +4,7 @@ export async function deleteDevice(deviceId: number) {
   const userId = getUserId();
   const token = getToken();
 
-  const result = await fetch(`/users/${userId}/devices/${deviceId}/delete`, {
+  const result = await fetch(`http://localhost:3000/users/${userId}/devices/${deviceId}/delete`, {
     method: "POST",
     headers: {
       Authorization: `Bearer ${token}`,
@@ -19,7 +19,7 @@ export async function editDevice(deviceId: number) {
   const userId = getUserId();
   const token = getToken();
 
-  const response = await fetch(`/users/${userId}/devices/${deviceId}/edit`, {
+  const response = await fetch(`http://localhost:3000/users/${userId}/devices/${deviceId}/edit`, {
     method: "POST",
     headers: {
       Authorization: `Bearer ${token}`,
@@ -43,7 +43,7 @@ export async function createDevice() {
     name.value = "MacBook";
   }
 
-  const result = await fetch(`/users/${userId}/devices/create`, {
+  const result = await fetch(`http://localhost:3000/users/${userId}/devices/create`, {
     method: "POST",
     headers: {
       Authorization: `Bearer ${token}`,

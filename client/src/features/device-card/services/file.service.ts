@@ -20,7 +20,7 @@ export async function fetchFile(deviceId: number) {
   const userId = getUserId();
 
   const result = await fetch(
-    `/users/${userId}/devices/${deviceId}/script/download`,
+    `http://localhost:3000/users/${userId}/devices/${deviceId}/script/download`,
     {
       method: "POST",
       headers: {

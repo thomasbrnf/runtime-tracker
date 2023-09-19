@@ -10,9 +10,4 @@ export class UsersController {
   async create(@Body() createUserDto: CreateUserDto) {
     return this.userService.createUser(createUserDto);
   }
-
-  @Get()
-  async users() {
-    return this.userService.getUsers();
-  }
 }
