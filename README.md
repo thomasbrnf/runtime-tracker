@@ -1,9 +1,8 @@
 <div align="center">
   <h1>Runtime Tracker</h1>
-   <img src="https://github.com/thomasbrnf/runtime-tracker/assets/57502071/4d3d1d22-3865-40b7-a8fc-f53d294dbd1c" alt="logo">
 </div> 
 
-<div> 
+<div class="grid"> 
   <img src="https://github.com/thomasbrnf/runtime-tracker/assets/57502071/6a7f2c65-650a-4bd5-a44d-dee867fe15d6" alt="landing-page">
   <img src="https://github.com/thomasbrnf/runtime-tracker/assets/57502071/d2ebb26f-717a-448a-b151-0306c3d2c79f" alt="create-device">
   <img src="https://github.com/thomasbrnf/runtime-tracker/assets/57502071/697725fc-f71f-495f-802d-bed6723dce5a" alt="in-action">
@@ -12,7 +11,12 @@
   <img src="https://github.com/thomasbrnf/runtime-tracker/assets/57502071/a43dcab3-0de8-42db-b69e-b06e2538ee48" alt="sessions-page">
   <img src="https://github.com/thomasbrnf/runtime-tracker/assets/57502071/5edf78b2-ec5e-4f98-905b-0080b872f8e8" alt="device-page-mobile">
 </div>
-
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+  }
+  
 ## Quick start guide
 
 Clone this repository to your local machine, after that, go to server folder and create ```.env``` file with this properties:
