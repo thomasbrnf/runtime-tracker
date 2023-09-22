@@ -9,7 +9,6 @@
   <img src="https://github.com/thomasbrnf/runtime-tracker/assets/57502071/8930044b-99ec-4689-821d-7feec7624e46" alt="google-calendar">
   <img src="https://github.com/thomasbrnf/runtime-tracker/assets/57502071/6d2f6894-8c6d-48f1-aeee-7da5e181c0e6" alt="devices-page">
   <img src="https://github.com/thomasbrnf/runtime-tracker/assets/57502071/a43dcab3-0de8-42db-b69e-b06e2538ee48" alt="sessions-page">
-  <img src="https://github.com/thomasbrnf/runtime-tracker/assets/57502071/5edf78b2-ec5e-4f98-905b-0080b872f8e8" alt="device-page-mobile">
 </div>
 
 ## Quick start guide
